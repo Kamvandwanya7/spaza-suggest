@@ -41,37 +41,53 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 app.get('/', async function (req, res) {
-    res.render('')
+    res.render('index')
 })
 
 app.post('/registerClient', async function (req, res) {
-    let user = req.body.username;
+    let user = req.body.username.toUpperCase();
     // console.log(req.body.username);
-    await spazaSuggest.registerClient(user)
-    res.render('suggest')
+    let code = await spazaSuggest.registerClient(user)
+    console.log(code);
+    // res.render('suggest')
     // req.flash('success', "Welcome" + ertyuhjkl)
 
-    // res.render('log')
+    var message = await `Welcome  ${user} use ${code} to login below`
+    res.render('index', { message })
 })
 
-// app.get('/clientLogin', async function (req, res) {
-//     const user_input= req.params.username
-//     // console.log(user_input);
-//     const user_code = req.session.code
-//     // console.log(user_code);
-//    if (user_code) {
-//         req.flash('success', 'Welcome' + ertyuhjkl)
-//    }
-//     res.render('suggest')
-// })
+app.get('/clientLogin', async function (req, res) {
+    const user_input = req.params.username
+    // console.log(user_input);
+    const user_code = req.session.code
+    // console.log(user_code);
+    if (user_code) {
+        message
+        req.flash('msg', 'Welcome' + ertyuhjkl)
+    }
+    res.render('suggest', {
+
+    }
+    )
+})
+
+app.post('/clientLogin', async function (req, res){
+
+  res.redirect('/suggestProduct')  
+})
 
 
-app.post('/suggestProduct', async function (req, res) {
-
+app.get('/suggestProduct', async function (req, res) {
+    let result = await spazaSuggest.areas()
+    console.log(result + "fdfdfd");
+    res.render('suggest', {
+        areas: result
+    })
 })
 
 app.post('/suggestProduct', async function (req, res) {
-
+let result= await spazaSuggest.suggestProduct(areaId, clientId, suggestion)
+    res.render('products')
 })
 
 

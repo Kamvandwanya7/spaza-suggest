@@ -11,15 +11,15 @@
 
 <body>
     <h2>Make a suggestion</h2>
-<form action="">
+<form action="/suggestProduct" method="post">
 
     <label for="area">Choose a area:</label>
 
-    <select name="area">
+    <select class="area">
         {{#each areas}}
         <option name='area' value="{{id}}">{{area_name}}</option>
         {{/each}}
-    </select>
+    </select> <br> <br>
 
 
         {{!-- <select class="area">
@@ -31,7 +31,7 @@
             <option value="Ford">Nyanga East</option>
         </select> <br> <br> --}}
 
-        <label for="area">Product suggestion:</label>
+        <label for="area">Product suggestion e.g sea food, goat meat, turkey, mangos:</label>
         <input type="text" name="Item" id="" placeholder="Suggest item"> <br><br>
 
         <button type="submit">Submit</button>

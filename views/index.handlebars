@@ -13,17 +13,27 @@
     <h2> Spaza app</h2>
 
 
-
-  <div class="success">
-            {{messages.success}}
-        </div>
+    <h3>Register here</h3>
+    <div class="success">
+        {{message}}
+    </div>
     <form action="/registerClient" method="post">
         <label for="">Username</label>
-        <input type="text" name="username" placeholder="Enter name" > <br> <br>
-    <a href="/clientLogin"><button type="submit">Register Client</button></a>
+        <input type="text" name="username" placeholder="Enter name"> <br> <br>
+        <button type="submit">Register Client</button>
+    </form> <br>
+    <hr>
+
+    <h2>Client login</h2>
+
+
+    <form action="/clientLogin" method="post">
+        {{!-- <div class="success">
+            {{message}}
+        </div> --}}
+        <input type="text" name="code" placeholder="Enter code">
+        <button type="submit">Login</button>
     </form>
-
-
 </body>
 
 </html>

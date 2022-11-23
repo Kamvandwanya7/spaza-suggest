@@ -7,3 +7,5 @@ sudo -u postgres cresteuser zuggs -P;
 password 'suggest123';
 
 
+sudo -u postgres createdb spaza_tests;
+sudo -u postgres cresteuser zugga -P;
