@@ -92,3 +92,5 @@ Method name | Description of method
 `productsForArea(areaId)` | products suggested for an area
 `areas()` | return all areas
 
+
+[![Node.js CI](https://github.com/Kamvandwanya7/spaza-suggest/actions/workflows/node.js.yml/badge.svg)](https://github.com/Kamvandwanya7/spaza-suggest/actions/workflows/node.js.yml)
