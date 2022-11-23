@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Make a suggestion</h2>
+<form action="">
+
+    <label for="area">Choose a area:</label>
+
+    <select name="area">
+        {{#each areas}}
+        <option name='area' value="{{id}}">{{area_name}}</option>
+        {{/each}}
+    </select>
+
+
+        {{!-- <select class="area">
+            <option value="select model">Select area</option>
+            <option value="Volkswagen">Khayelitsa - Site B</option>
+            <option value="Toyota">Khayelitsa - Site C</option>
+            <option value="Nissan">Khayelitsa - Makhaza</option>
+            <option value="Ford">Nyanga</option>
+            <option value="Ford">Nyanga East</option>
+        </select> <br> <br> --}}
+
+        <label for="area">Product suggestion:</label>
+        <input type="text" name="Item" id="" placeholder="Suggest item"> <br><br>
+
+        <button type="submit">Submit</button>
+</form>
+
+
+
+</body>
+
+</html>

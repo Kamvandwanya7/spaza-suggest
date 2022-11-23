@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(162, 162, 180);
+    align-items: center;
+    align-self: center;
+    text-align: center;
+}
+.success{
+    color: green;
+}

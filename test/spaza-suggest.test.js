@@ -1,7 +1,7 @@
-import assert from 'assert';
+const assert= require('assert');
 
-import SpazaSuggest from '../spaza-suggest.js';
-import pgPromise from 'pg-promise';
+const SpazaSuggest= require('../spaza-suggest.js');
+const pgPromise= require('pg-promise') ;
 
 // const DATABASE_URL= process.env.DATABASE_URL || "postgresql://codex-coder:pg123@localhost:5432/spaza_suggest";
 const DATABASE_URL= process.env.DATABASE_URL || "postgresql://zuggs:suggest123@localhost:5432/spaza_suggest";
@@ -92,7 +92,7 @@ describe ("The smart spaza", function() {
         const code = await spazaSuggest.registerClient('spazani');
         const client = await spazaSuggest.clientLogin(code);
 
-        const area1 = await spazaSuggest.findAreaByName('Nyanga');
+        const area1 = await spazaSuggest.findAreaByName('Nyanga East');
         const area2 = await spazaSuggest.findAreaByName('Nyanga East');
 
         await spazaSuggest.suggestProduct(area1.id, client.id, 'Small Pizzas');
